@@ -2,7 +2,7 @@
 <html>
 <head>
 	<title>RedSun ERP</title>
-	<link rel="stylesheet" type="text/css" href="css/index.css"/>
+	<link rel="stylesheet" type="text/css" href="../css/index.css"/>
 	<meta http-equiv="content-type" content="text/html" charset="utf-8">
 
 	<?php include "database_connect.php"; ?>
