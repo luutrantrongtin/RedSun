@@ -1,0 +1,495 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source source="LOCAL" name="Data Source" product="MySQL" version="5.6.12-log" jdbc-version="4.0" driver-name="MySQL-AB JDBC Driver" driver-version="mysql-connector-java-5.1.22 ( Revision: ${bzr.revision-id} )" uuid="e5b336b8-e9da-4cf9-b3b2-89c4c524e3b5">
+    <extra-name-characters>#@</extra-name-characters>
+    <identifier-quote-string>`</identifier-quote-string>
+    <synchronize>true</synchronize>
+    <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
+    <jdbc-url>jdbc:mysql://localhost:3306/redsun</jdbc-url>
+    <user-name>root</user-name>
+    <schema-pattern>redsun.*</schema-pattern>
+    <default-dialect>MySQL</default-dialect>
+    <libraries>
+      <library>
+        <url>jar://$PROJECT_DIR$/mysql-connector-java-5.1.22-bin.jar!/</url>
+      </library>
+      <library>
+        <url>file://$PROJECT_DIR$/mysql-connector-license.txt</url>
+      </library>
+    </libraries>
+    <schema name="" catalog="redsun"/>
+    <table name="aday" schema="" catalog="redsun" type="TABLE">
+      <column name="Column 1" sqlType="DATETIME" length="19" precision="0" nullable="false" jdbcType="93"/>
+    </table>
+    <table name="city" schema="" catalog="redsun" type="TABLE">
+      <column name="CityID" sqlType="TINYINT UNSIGNED" length="3" precision="0" nullable="false" jdbcType="-6" autoIncrement="true"/>
+      <column name="Name" sqlType="VARCHAR" length="20" precision="0" nullable="false" jdbcType="12"/>
+      <column name="LastUpdate" sqlType="TIMESTAMP" length="19" precision="0" nullable="false" jdbcType="93" def="Q1VSUkVOVF9USU1FU1RBTVA=" version="true"/>
+      <primary-key name="PRIMARY" columns="CityID,Name"/>
+      <exported-key name="FK_district_city" table="district" schema="" catalog="redsun" columns="CityID"/>
+    </table>
+    <table name="customer" schema="" catalog="redsun" type="TABLE">
+      <column name="CustomerID" sqlType="INT UNSIGNED" length="10" precision="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="UID" sqlType="CHAR" length="10" precision="0" nullable="true" jdbcType="1"/>
+      <column name="Grade" sqlType="VARCHAR" length="15" precision="0" nullable="false" jdbcType="12" def="J3bDo25nIGxhaSc=" remarks="dsOjbmcgbGFpL3RoxrDhu51uZyB4dXnDqm4vdGjDom4gdGhp4bq/dC9WSVA="/>
+      <column name="Username" sqlType="VARCHAR" length="20" precision="0" nullable="true" jdbcType="12" remarks="bMOgIHTDqm4gxJHhuqd5IMSR4bunIGtow7RuZyBk4bqldSByw7p0IGfhu41uIHZp4bq/dCBsaeG7gW4="/>
+      <column name="Password" sqlType="VARCHAR" length="20" precision="0" nullable="true" jdbcType="12"/>
+      <column name="TaxCode" sqlType="VARCHAR" length="13" precision="0" nullable="true" jdbcType="12" remarks="ZMOgbmggY2hvIGtow6FjaCBtdeG7kW4gbOG6pXkgaMOzYSDEkcahbiDEkeG7jw=="/>
+      <column name="LoginCount" sqlType="TINYINT UNSIGNED" length="3" precision="0" nullable="true" jdbcType="-6" remarks="xJHhur9tIHPhu5EgbOG6p24gxJHEg25nIG5o4bqtcCBmYWlsZWQ="/>
+      <column name="LastTry" sqlType="TIMESTAMP" length="19" precision="0" nullable="true" jdbcType="93" remarks="bOG6p24gY3Xhu5FpIMSRxINuZyBuaOG6rXAgdGjhuqV0IGLhuqFp" version="true"/>
+      <column name="LastLogin" sqlType="TIMESTAMP" length="19" precision="0" nullable="true" jdbcType="93" remarks="bOG6p24gY3Xhu5FpIMSRxINuZyBuaOG6rXAgdGjDoG5oIGPDtG5n" version="true"/>
+      <primary-key name="PRIMARY" columns="CustomerID"/>
+      <exported-key name="FK_customer_changelog_customer" table="customer_changelog" schema="" catalog="redsun" columns="CustomerID"/>
+      <exported-key name="FK_customer_detail_customer" table="customer_detail" schema="" catalog="redsun" columns="CustomerID"/>
+      <exported-key name="FK_dish_community_customer" table="dish_community" schema="" catalog="redsun" columns="CustomerID"/>
+      <exported-key name="FK_user_comment_customer" table="dish_user_comment" schema="" catalog="redsun" columns="CustomerID"/>
+      <exported-key name="FK_user_photo_customer" table="dish_user_photo" schema="" catalog="redsun" columns="CustomerID"/>
+      <exported-key name="FK__customer" table="invoice" schema="" catalog="redsun" columns="CustomerID"/>
+      <exported-key name="FK_order_customer" table="order" schema="" catalog="redsun" columns="CustomerID"/>
+    </table>
+    <table name="customer_changelog" schema="" catalog="redsun" type="TABLE">
+      <column name="CustomerID" sqlType="INT UNSIGNED" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="Field" sqlType="VARCHAR" length="15" precision="0" nullable="false" jdbcType="12"/>
+      <column name="OldValue" sqlType="VARCHAR" length="30" precision="0" nullable="false" jdbcType="12"/>
+      <column name="NewValue" sqlType="VARCHAR" length="30" precision="0" nullable="false" jdbcType="12"/>
+      <column name="Date" sqlType="DATETIME" length="19" precision="0" nullable="false" jdbcType="93"/>
+      <column name="LastUpdate" sqlType="DATETIME" length="19" precision="0" nullable="false" jdbcType="93"/>
+      <foreign-key name="FK_customer_changelog_customer" columns="CustomerID" ref-table="customer" ref-schema="" ref-catalog="redsun" ref-columns="CustomerID" update-rule="3" delete-rule="3" deferrability="2"/>
+    </table>
+    <table name="customer_detail" schema="" catalog="redsun" type="TABLE">
+      <column name="CustomerID" sqlType="INT UNSIGNED" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="IDNo" sqlType="VARCHAR" length="12" precision="0" nullable="true" jdbcType="12"/>
+      <column name="LastName" sqlType="VARCHAR" length="10" precision="0" nullable="false" jdbcType="12"/>
+      <column name="MiddleName" sqlType="VARCHAR" length="10" precision="0" nullable="true" jdbcType="12"/>
+      <column name="FirstName" sqlType="VARCHAR" length="10" precision="0" nullable="false" jdbcType="12"/>
+      <column name="Birthday_Day" sqlType="TINYINT" length="3" precision="0" nullable="true" jdbcType="-6"/>
+      <column name="Birthday_Month" sqlType="TINYINT" length="3" precision="0" nullable="true" jdbcType="-6"/>
+      <column name="Birthday_Year" sqlType="MEDIUMINT" length="7" precision="0" nullable="true" jdbcType="4"/>
+      <column name="JoinDate" sqlType="DATE" length="10" precision="0" nullable="false" jdbcType="91"/>
+      <column name="Address" sqlType="VARCHAR" length="30" precision="0" nullable="true" jdbcType="12"/>
+      <column name="District" sqlType="VARCHAR" length="20" precision="0" nullable="true" jdbcType="12"/>
+      <column name="City" sqlType="VARCHAR" length="20" precision="0" nullable="true" jdbcType="12"/>
+      <column name="Phone" sqlType="VARCHAR" length="33" precision="0" nullable="true" jdbcType="12"/>
+      <column name="Email" sqlType="VARCHAR" length="30" precision="0" nullable="true" jdbcType="12"/>
+      <foreign-key name="FK_customer_detail_customer" columns="CustomerID" ref-table="customer" ref-schema="" ref-catalog="redsun" ref-columns="CustomerID" update-rule="3" delete-rule="3" deferrability="2"/>
+    </table>
+    <table name="department" schema="" catalog="redsun" type="TABLE">
+      <column name="DepartmentID" sqlType="MEDIUMINT UNSIGNED" length="8" precision="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="Name" sqlType="VARCHAR" length="30" precision="0" nullable="false" jdbcType="12"/>
+      <column name="IsChildOf" sqlType="MEDIUMINT UNSIGNED" length="8" precision="0" nullable="true" jdbcType="4"/>
+      <column name="Address" sqlType="VARCHAR" length="30" precision="0" nullable="false" jdbcType="12"/>
+      <column name="District" sqlType="VARCHAR" length="20" precision="0" nullable="false" jdbcType="12"/>
+      <column name="City" sqlType="VARCHAR" length="20" precision="0" nullable="false" jdbcType="12"/>
+      <column name="Phone" sqlType="VARCHAR" length="11" precision="0" nullable="true" jdbcType="12"/>
+      <column name="Founded" sqlType="TIMESTAMP" length="19" precision="0" nullable="true" jdbcType="93" def="Q1VSUkVOVF9USU1FU1RBTVA="/>
+      <primary-key name="PRIMARY" columns="DepartmentID"/>
+      <foreign-key name="FK_department_department" columns="IsChildOf" ref-table="department" ref-schema="" ref-catalog="redsun" ref-columns="DepartmentID" update-rule="3" delete-rule="3" deferrability="2"/>
+      <exported-key name="FK_department_department" table="department" schema="" catalog="redsun" columns="IsChildOf"/>
+      <exported-key name="FK_department_changelog_department" table="department_changelog" schema="" catalog="redsun" columns="DepartmentID"/>
+      <exported-key name="FK_employee_department" table="employee" schema="" catalog="redsun" columns="WorkAt"/>
+    </table>
+    <table name="department_changelog" schema="" catalog="redsun" type="TABLE">
+      <column name="DepartmentID" sqlType="MEDIUMINT UNSIGNED" length="8" precision="0" nullable="false" jdbcType="4"/>
+      <column name="Field" sqlType="VARCHAR" length="15" precision="0" nullable="false" jdbcType="12"/>
+      <column name="OldValue" sqlType="VARCHAR" length="30" precision="0" nullable="false" jdbcType="12"/>
+      <column name="NewValue" sqlType="VARCHAR" length="30" precision="0" nullable="false" jdbcType="12"/>
+      <column name="Date" sqlType="DATETIME" length="19" precision="0" nullable="false" jdbcType="93"/>
+      <column name="LastUpdate" sqlType="DATETIME" length="19" precision="0" nullable="false" jdbcType="93"/>
+      <foreign-key name="FK_department_changelog_department" columns="DepartmentID" ref-table="department" ref-schema="" ref-catalog="redsun" ref-columns="DepartmentID" update-rule="3" delete-rule="3" deferrability="2"/>
+    </table>
+    <table name="dish" schema="" catalog="redsun" type="TABLE">
+      <column name="DishID" sqlType="MEDIUMINT UNSIGNED" length="8" precision="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="UID" sqlType="VARCHAR" length="10" precision="0" nullable="true" jdbcType="12"/>
+      <column name="Name" sqlType="VARCHAR" length="30" precision="0" nullable="false" jdbcType="12"/>
+      <column name="AvatarURL" sqlType="VARCHAR" length="150" precision="0" nullable="false" jdbcType="12" remarks="bGluayBow6xuaCDhuqNuaA=="/>
+      <column name="Price" sqlType="MEDIUMINT UNSIGNED" length="8" precision="0" nullable="false" jdbcType="4"/>
+      <column name="Time" sqlType="TINYINT UNSIGNED" length="3" precision="0" nullable="true" jdbcType="-6" remarks="dGjhu51pIGdpYW4gbuG6pXU="/>
+      <column name="Serving" sqlType="TINYINT UNSIGNED" length="3" precision="0" nullable="false" jdbcType="-6" def="MQ==" remarks="a2jhuql1IHBo4bqnbiDEg24="/>
+      <primary-key name="PRIMARY" columns="DishID"/>
+      <exported-key name="FK_dish_changelog_dish" table="dish_changelog" schema="" catalog="redsun" columns="DishID"/>
+      <exported-key name="FK_dish_community_dish" table="dish_community" schema="" catalog="redsun" columns="DishID"/>
+      <exported-key name="FK_dish_direction_dish" table="dish_direction" schema="" catalog="redsun" columns="DishID"/>
+      <exported-key name="FK_dish_equipment_detail_dish" table="dish_equipment_detail" schema="" catalog="redsun" columns="DishID"/>
+      <exported-key name="FK_dish_ingredent_detail_dish" table="dish_ingredent_detail" schema="" catalog="redsun" columns="DishID"/>
+      <exported-key name="FK_dish_option_dish" table="dish_option" schema="" catalog="redsun" columns="DishID"/>
+      <exported-key name="FK_dish_tag_dish" table="dish_tag" schema="" catalog="redsun" columns="DishID"/>
+      <exported-key name="FK_user_comment_dish" table="dish_user_comment" schema="" catalog="redsun" columns="DishID"/>
+      <exported-key name="FK_user_photo_dish" table="dish_user_photo" schema="" catalog="redsun" columns="DishID"/>
+      <exported-key name="FK__dish" table="invoice_detail" schema="" catalog="redsun" columns="DishID"/>
+      <exported-key name="FK_order_dish" table="order" schema="" catalog="redsun" columns="DishID"/>
+    </table>
+    <table name="dish_changelog" schema="" catalog="redsun" type="TABLE">
+      <column name="DishID" sqlType="MEDIUMINT UNSIGNED" length="8" precision="0" nullable="false" jdbcType="4"/>
+      <column name="Field" sqlType="VARCHAR" length="15" precision="0" nullable="false" jdbcType="12"/>
+      <column name="OldValue" sqlType="VARCHAR" length="150" precision="0" nullable="false" jdbcType="12"/>
+      <column name="NewValue" sqlType="VARCHAR" length="150" precision="0" nullable="false" jdbcType="12"/>
+      <column name="Date" sqlType="DATETIME" length="19" precision="0" nullable="false" jdbcType="93"/>
+      <column name="LastUpdate" sqlType="DATETIME" length="19" precision="0" nullable="false" jdbcType="93"/>
+      <foreign-key name="FK_dish_changelog_dish" columns="DishID" ref-table="dish" ref-schema="" ref-catalog="redsun" ref-columns="DishID" update-rule="3" delete-rule="3" deferrability="2"/>
+    </table>
+    <table name="dish_community" schema="" catalog="redsun" type="TABLE">
+      <column name="DishID" sqlType="MEDIUMINT UNSIGNED" length="8" precision="0" nullable="false" jdbcType="4"/>
+      <column name="CustomerID" sqlType="INT UNSIGNED" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="Ratings" sqlType="BIT" length="0" precision="0" nullable="true" jdbcType="-7" remarks="xJFp4buDbQ=="/>
+      <column name="Like" sqlType="MEDIUMINT UNSIGNED" length="8" precision="0" nullable="true" jdbcType="4" remarks="c+G7kSBsxrDhu6NuZyBsaWtl"/>
+      <column name="Comment" sqlType="MEDIUMINT UNSIGNED" length="8" precision="0" nullable="true" jdbcType="4" remarks="c+G7kSBsxrDhu6NuZyBjb21tZW50"/>
+      <foreign-key name="FK_dish_community_customer" columns="CustomerID" ref-table="customer" ref-schema="" ref-catalog="redsun" ref-columns="CustomerID" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="FK_dish_community_dish" columns="DishID" ref-table="dish" ref-schema="" ref-catalog="redsun" ref-columns="DishID" update-rule="3" delete-rule="3" deferrability="2"/>
+    </table>
+    <table name="dish_direction" schema="" catalog="redsun" type="TABLE">
+      <column name="DishID" sqlType="MEDIUMINT UNSIGNED" length="8" precision="0" nullable="false" jdbcType="4"/>
+      <column name="Step" sqlType="BIT" length="0" precision="0" nullable="false" jdbcType="-7"/>
+      <column name="Direction" sqlType="VARCHAR" length="100" precision="0" nullable="true" jdbcType="12"/>
+      <column name="Image" sqlType="VARCHAR" length="150" precision="0" nullable="true" jdbcType="12"/>
+      <foreign-key name="FK_dish_direction_dish" columns="DishID" ref-table="dish" ref-schema="" ref-catalog="redsun" ref-columns="DishID" update-rule="3" delete-rule="3" deferrability="2"/>
+    </table>
+    <table name="dish_equipment_detail" schema="" catalog="redsun" type="TABLE">
+      <column name="DishID" sqlType="MEDIUMINT UNSIGNED" length="8" precision="0" nullable="false" jdbcType="4"/>
+      <column name="EquipmentID" sqlType="MEDIUMINT UNSIGNED" length="8" precision="0" nullable="false" jdbcType="4"/>
+      <column name="Quantity" sqlType="TINYINT UNSIGNED" length="3" precision="0" nullable="false" jdbcType="-6" def="MQ=="/>
+      <foreign-key name="FK_dish_equipment_detail_dish" columns="DishID" ref-table="dish" ref-schema="" ref-catalog="redsun" ref-columns="DishID" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="FK_dish_equipment_detail_equipment" columns="EquipmentID" ref-table="equipment" ref-schema="" ref-catalog="redsun" ref-columns="EquipmentID" update-rule="3" delete-rule="3" deferrability="2"/>
+    </table>
+    <table name="dish_ingredent_detail" schema="" catalog="redsun" type="TABLE">
+      <column name="DishID" sqlType="MEDIUMINT UNSIGNED" length="8" precision="0" nullable="false" jdbcType="4"/>
+      <column name="IngredentID" sqlType="MEDIUMINT UNSIGNED" length="8" precision="0" nullable="false" jdbcType="4"/>
+      <column name="Amount" sqlType="VARCHAR" length="15" precision="0" nullable="false" jdbcType="12"/>
+      <column name="Optional" sqlType="BIT" length="0" precision="0" nullable="true" jdbcType="-7" remarks="bmd1ecOqbiBsaeG7h3UgY8OzIGNobyBwaMOpcCB0w7l5IGJp4bq/biBoYXkga2jDtG5n"/>
+      <foreign-key name="FK_dish_ingredent_detail_dish" columns="DishID" ref-table="dish" ref-schema="" ref-catalog="redsun" ref-columns="DishID" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="FK_dish_ingredent_detail_ingredent" columns="IngredentID" ref-table="ingredent" ref-schema="" ref-catalog="redsun" ref-columns="IngredentID" update-rule="3" delete-rule="3" deferrability="2"/>
+    </table>
+    <table name="dish_option" schema="" catalog="redsun" type="TABLE">
+      <column name="DishID" sqlType="MEDIUMINT UNSIGNED" length="8" precision="0" nullable="false" jdbcType="4"/>
+      <column name="Option" sqlType="VARCHAR" length="10" precision="0" nullable="false" jdbcType="12"/>
+      <column name="IngredentID" sqlType="MEDIUMINT UNSIGNED" length="8" precision="0" nullable="false" jdbcType="4"/>
+      <foreign-key name="FK_dish_option_dish" columns="DishID" ref-table="dish" ref-schema="" ref-catalog="redsun" ref-columns="DishID" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="FK_dish_option_ingredent" columns="IngredentID" ref-table="ingredent" ref-schema="" ref-catalog="redsun" ref-columns="IngredentID" update-rule="3" delete-rule="3" deferrability="2"/>
+    </table>
+    <table name="dish_tag" schema="" catalog="redsun" type="TABLE">
+      <column name="DishID" sqlType="MEDIUMINT UNSIGNED" length="8" precision="0" nullable="false" jdbcType="4"/>
+      <column name="Tag" sqlType="VARCHAR" length="15" precision="0" nullable="false" jdbcType="12"/>
+      <foreign-key name="FK_dish_tag_dish" columns="DishID" ref-table="dish" ref-schema="" ref-catalog="redsun" ref-columns="DishID" update-rule="3" delete-rule="3" deferrability="2"/>
+    </table>
+    <table name="dish_user_comment" schema="" catalog="redsun" type="TABLE">
+      <column name="DishID" sqlType="MEDIUMINT UNSIGNED" length="8" precision="0" nullable="false" jdbcType="4"/>
+      <column name="CustomerID" sqlType="INT UNSIGNED" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="ReplyTo" sqlType="INT UNSIGNED" length="10" precision="0" nullable="true" jdbcType="4"/>
+      <column name="Comment" sqlType="VARCHAR" length="300" precision="0" nullable="false" jdbcType="12"/>
+      <column name="PostTime" sqlType="TIMESTAMP" length="19" precision="0" nullable="false" jdbcType="93" def="Q1VSUkVOVF9USU1FU1RBTVA="/>
+      <column name="IsDeleted" sqlType="BIT" length="0" precision="0" nullable="true" jdbcType="-7" remarks="bnVsbDogdGluIGRjIHBow6lwIMSRxINuZw=="/>
+      <foreign-key name="FK_user_comment_customer" columns="CustomerID" ref-table="customer" ref-schema="" ref-catalog="redsun" ref-columns="CustomerID" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="FK_user_comment_dish" columns="DishID" ref-table="dish" ref-schema="" ref-catalog="redsun" ref-columns="DishID" update-rule="3" delete-rule="3" deferrability="2"/>
+    </table>
+    <table name="dish_user_photo" schema="" catalog="redsun" type="TABLE">
+      <column name="DishID" sqlType="MEDIUMINT UNSIGNED" length="8" precision="0" nullable="false" jdbcType="4"/>
+      <column name="CustomerID" sqlType="INT UNSIGNED" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="ImageURL" sqlType="VARCHAR" length="150" precision="0" nullable="false" jdbcType="12"/>
+      <column name="PostTime" sqlType="TIMESTAMP" length="19" precision="0" nullable="true" jdbcType="93" def="Q1VSUkVOVF9USU1FU1RBTVA="/>
+      <foreign-key name="FK_user_photo_customer" columns="CustomerID" ref-table="customer" ref-schema="" ref-catalog="redsun" ref-columns="CustomerID" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="FK_user_photo_dish" columns="DishID" ref-table="dish" ref-schema="" ref-catalog="redsun" ref-columns="DishID" update-rule="3" delete-rule="3" deferrability="2"/>
+    </table>
+    <table name="district" schema="" catalog="redsun" type="TABLE">
+      <column name="CityID" sqlType="TINYINT UNSIGNED" length="3" precision="0" nullable="false" jdbcType="-6"/>
+      <column name="Name" sqlType="VARCHAR" length="20" precision="0" nullable="false" jdbcType="12"/>
+      <column name="LastUpdate" sqlType="TIMESTAMP" length="19" precision="0" nullable="false" jdbcType="93" def="Q1VSUkVOVF9USU1FU1RBTVA=" version="true"/>
+      <primary-key name="PRIMARY" columns="Name"/>
+      <foreign-key name="FK_district_city" columns="CityID" ref-table="city" ref-schema="" ref-catalog="redsun" ref-columns="CityID" update-rule="3" delete-rule="3" deferrability="2"/>
+    </table>
+    <table name="employee" schema="" catalog="redsun" type="TABLE">
+      <column name="EmployeeID" sqlType="MEDIUMINT UNSIGNED" length="8" precision="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="UID" sqlType="CHAR" length="10" precision="0" nullable="true" jdbcType="1"/>
+      <column name="Username" sqlType="VARCHAR" length="20" precision="0" nullable="true" jdbcType="12"/>
+      <column name="Password" sqlType="VARCHAR" length="20" precision="0" nullable="true" jdbcType="12"/>
+      <column name="LastName" sqlType="VARCHAR" length="10" precision="0" nullable="false" jdbcType="12"/>
+      <column name="MiddleName" sqlType="VARCHAR" length="10" precision="0" nullable="true" jdbcType="12"/>
+      <column name="FirstName" sqlType="VARCHAR" length="10" precision="0" nullable="false" jdbcType="12"/>
+      <column name="WorkAt" sqlType="MEDIUMINT UNSIGNED" length="8" precision="0" nullable="false" jdbcType="4"/>
+      <column name="Position" sqlType="VARCHAR" length="20" precision="0" nullable="false" jdbcType="12" remarks="Y2jhu6ljIHbhu6U6TmjDom4gdmnDqm4vVHLGsOG7n25nIG5ow7NtL3RyxrDhu59uZyBwaMOybmcvdGjGsCBrw60vZ2nDoW0gxJHhu5FjLi4u"/>
+      <column name="Status" sqlType="VARCHAR" length="20" precision="0" nullable="false" jdbcType="12" def="J1Ro4butIHZp4buHYyc=" remarks="bmjDom52acOqbjprw6wgY+G7sXUvY2jDrW5oIHRo4bupYy90aOG7nWkgduG7pS90aOG7rSB2aeG7h2MvdGjhu7FjIHThuq1wL25naOG7iSB2aeG7h2M="/>
+      <column name="TaxCode" sqlType="VARCHAR" length="13" precision="0" nullable="true" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="EmployeeID"/>
+      <foreign-key name="FK_employee_department" columns="WorkAt" ref-table="department" ref-schema="" ref-catalog="redsun" ref-columns="DepartmentID" update-rule="3" delete-rule="3" deferrability="2"/>
+      <exported-key name="FK_employee_changelog_employee" table="employee_changelog" schema="" catalog="redsun" columns="EmployeeID"/>
+      <exported-key name="FK_employee_detail_employee" table="employee_detail" schema="" catalog="redsun" columns="EmployeeID"/>
+      <exported-key name="FK__employee" table="invoice" schema="" catalog="redsun" columns="EmployeeID"/>
+      <exported-key name="FK_message_receiver_employee" table="message_receiver" schema="" catalog="redsun" columns="EmployeeID"/>
+      <exported-key name="FK_message_sender_employee" table="message_sender" schema="" catalog="redsun" columns="EmployeeID"/>
+      <exported-key name="FK_resource_employee" table="resource" schema="" catalog="redsun" columns="EmployeeID"/>
+    </table>
+    <table name="employee_changelog" schema="" catalog="redsun" type="TABLE">
+      <column name="EmployeeID" sqlType="MEDIUMINT UNSIGNED" length="8" precision="0" nullable="false" jdbcType="4"/>
+      <column name="Field" sqlType="VARCHAR" length="15" precision="0" nullable="false" jdbcType="12"/>
+      <column name="OldValue" sqlType="VARCHAR" length="33" precision="0" nullable="false" jdbcType="12"/>
+      <column name="NewValue" sqlType="VARCHAR" length="33" precision="0" nullable="false" jdbcType="12"/>
+      <column name="Date" sqlType="DATETIME" length="19" precision="0" nullable="false" jdbcType="93"/>
+      <column name="LastUpdate" sqlType="DATETIME" length="19" precision="0" nullable="false" jdbcType="93"/>
+      <foreign-key name="FK_employee_changelog_employee" columns="EmployeeID" ref-table="employee" ref-schema="" ref-catalog="redsun" ref-columns="EmployeeID" update-rule="3" delete-rule="3" deferrability="2"/>
+    </table>
+    <table name="employee_detail" schema="" catalog="redsun" type="TABLE">
+      <column name="EmployeeID" sqlType="MEDIUMINT UNSIGNED" length="8" precision="0" nullable="false" jdbcType="4"/>
+      <column name="Birthday_Day" sqlType="TINYINT UNSIGNED" length="3" precision="0" nullable="true" jdbcType="-6"/>
+      <column name="Birthday_Month" sqlType="TINYINT UNSIGNED" length="3" precision="0" nullable="true" jdbcType="-6"/>
+      <column name="Birthday_Year" sqlType="SMALLINT UNSIGNED" length="5" precision="0" nullable="true" jdbcType="5"/>
+      <column name="HireDate" sqlType="DATE" length="10" precision="0" nullable="false" jdbcType="91"/>
+      <column name="Address" sqlType="VARCHAR" length="30" precision="0" nullable="true" jdbcType="12"/>
+      <column name="District" sqlType="VARCHAR" length="20" precision="0" nullable="true" jdbcType="12"/>
+      <column name="City" sqlType="VARCHAR" length="20" precision="0" nullable="true" jdbcType="12"/>
+      <column name="Phone" sqlType="VARCHAR" length="33" precision="0" nullable="true" jdbcType="12"/>
+      <column name="Avatar" sqlType="VARCHAR" length="150" precision="0" nullable="true" jdbcType="12"/>
+      <foreign-key name="FK_employee_detail_employee" columns="EmployeeID" ref-table="employee" ref-schema="" ref-catalog="redsun" ref-columns="EmployeeID" update-rule="3" delete-rule="3" deferrability="2"/>
+    </table>
+    <table name="employee_position" schema="" catalog="redsun" type="TABLE">
+      <column name="ID" sqlType="TINYINT UNSIGNED" length="3" precision="0" nullable="false" jdbcType="-6" autoIncrement="true"/>
+      <column name="Name" sqlType="VARCHAR" length="20" precision="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="ID,Name"/>
+    </table>
+    <table name="employee_status" schema="" catalog="redsun" type="TABLE">
+      <column name="Name" sqlType="VARCHAR" length="20" precision="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="Name"/>
+    </table>
+    <table name="equipment" schema="" catalog="redsun" type="TABLE">
+      <column name="EquipmentID" sqlType="MEDIUMINT UNSIGNED" length="8" precision="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="Name" sqlType="VARCHAR" length="20" precision="0" nullable="false" jdbcType="12"/>
+      <column name="SupplierID" sqlType="MEDIUMINT UNSIGNED" length="8" precision="0" nullable="false" jdbcType="4"/>
+      <column name="Price" sqlType="MEDIUMINT UNSIGNED" length="8" precision="0" nullable="true" jdbcType="4"/>
+      <column name="Unit" sqlType="VARCHAR" length="10" precision="0" nullable="true" jdbcType="12"/>
+      <column name="AvatarURL" sqlType="VARCHAR" length="150" precision="0" nullable="true" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="EquipmentID"/>
+      <foreign-key name="FK_equipment_supplier" columns="SupplierID" ref-table="supplier" ref-schema="" ref-catalog="redsun" ref-columns="SupplierID" update-rule="3" delete-rule="3" deferrability="2"/>
+      <exported-key name="FK_dish_equipment_detail_equipment" table="dish_equipment_detail" schema="" catalog="redsun" columns="EquipmentID"/>
+    </table>
+    <table name="ingredent" schema="" catalog="redsun" type="TABLE">
+      <column name="IngredentID" sqlType="MEDIUMINT UNSIGNED" length="8" precision="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="Name" sqlType="VARCHAR" length="20" precision="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="IngredentID"/>
+      <exported-key name="FK_dish_ingredent_detail_ingredent" table="dish_ingredent_detail" schema="" catalog="redsun" columns="IngredentID"/>
+      <exported-key name="FK_dish_option_ingredent" table="dish_option" schema="" catalog="redsun" columns="IngredentID"/>
+      <exported-key name="FK_ingredent_changelog_ingredent" table="ingredent_changelog" schema="" catalog="redsun" columns="IngredentID"/>
+      <exported-key name="FK_ingredent_detail_ingredent" table="ingredent_detail" schema="" catalog="redsun" columns="IngredentID"/>
+    </table>
+    <table name="ingredent_changelog" schema="" catalog="redsun" type="TABLE">
+      <column name="IngredentID" sqlType="MEDIUMINT UNSIGNED" length="8" precision="0" nullable="false" jdbcType="4"/>
+      <column name="Field" sqlType="VARCHAR" length="15" precision="0" nullable="false" jdbcType="12"/>
+      <column name="OldValue" sqlType="VARCHAR" length="30" precision="0" nullable="false" jdbcType="12"/>
+      <column name="NewValue" sqlType="VARCHAR" length="30" precision="0" nullable="false" jdbcType="12"/>
+      <column name="Date" sqlType="DATETIME" length="19" precision="0" nullable="false" jdbcType="93"/>
+      <column name="LastUpdate" sqlType="DATETIME" length="19" precision="0" nullable="false" jdbcType="93"/>
+      <foreign-key name="FK_ingredent_changelog_ingredent" columns="IngredentID" ref-table="ingredent" ref-schema="" ref-catalog="redsun" ref-columns="IngredentID" update-rule="3" delete-rule="3" deferrability="2"/>
+    </table>
+    <table name="ingredent_detail" schema="" catalog="redsun" type="TABLE">
+      <column name="IngredentID" sqlType="MEDIUMINT UNSIGNED" length="8" precision="0" nullable="false" jdbcType="4"/>
+      <column name="SupplierID" sqlType="MEDIUMINT UNSIGNED" length="8" precision="0" nullable="false" jdbcType="4"/>
+      <column name="Price" sqlType="MEDIUMINT UNSIGNED" length="8" precision="0" nullable="true" jdbcType="4"/>
+      <column name="AvatarURL" sqlType="VARCHAR" length="150" precision="0" nullable="true" jdbcType="12"/>
+      <column name="MeasurementUnit" sqlType="VARCHAR" length="10" precision="0" nullable="true" jdbcType="12"/>
+      <column name="Color" sqlType="VARCHAR" length="10" precision="0" nullable="true" jdbcType="12"/>
+      <column name="InStock" sqlType="MEDIUMINT UNSIGNED" length="8" precision="0" nullable="false" jdbcType="4"/>
+      <foreign-key name="FK_ingredent_detail_ingredent" columns="IngredentID" ref-table="ingredent" ref-schema="" ref-catalog="redsun" ref-columns="IngredentID" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="FK_ingredent_detail_supplier" columns="SupplierID" ref-table="supplier" ref-schema="" ref-catalog="redsun" ref-columns="SupplierID" update-rule="3" delete-rule="3" deferrability="2"/>
+    </table>
+    <table name="invoice" schema="" catalog="redsun" type="TABLE">
+      <column name="invoiceID" sqlType="INT UNSIGNED" length="10" precision="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="CustomerID" sqlType="INT UNSIGNED" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="EmployeeID" sqlType="MEDIUMINT UNSIGNED" length="8" precision="0" nullable="false" jdbcType="4" remarks="bmjDom4gdmnDqm4gdMOtbmggdGnhu4Fu"/>
+      <column name="Total" sqlType="INT UNSIGNED" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="Time" sqlType="TIMESTAMP" length="19" precision="0" nullable="false" jdbcType="93" def="Q1VSUkVOVF9USU1FU1RBTVA=" version="true"/>
+      <column name="Location" sqlType="VARCHAR" length="30" precision="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="invoiceID"/>
+      <foreign-key name="FK__customer" columns="CustomerID" ref-table="customer" ref-schema="" ref-catalog="redsun" ref-columns="CustomerID" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="FK__employee" columns="EmployeeID" ref-table="employee" ref-schema="" ref-catalog="redsun" ref-columns="EmployeeID" update-rule="3" delete-rule="3" deferrability="2"/>
+      <exported-key name="FK__invoice" table="invoice_detail" schema="" catalog="redsun" columns="InvoiceID"/>
+    </table>
+    <table name="invoice_detail" schema="" catalog="redsun" type="TABLE">
+      <column name="InvoiceID" sqlType="INT UNSIGNED" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="DishID" sqlType="MEDIUMINT UNSIGNED" length="8" precision="0" nullable="false" jdbcType="4"/>
+      <column name="Quantity" sqlType="SMALLINT UNSIGNED" length="5" precision="0" nullable="false" jdbcType="5"/>
+      <column name="Price" sqlType="MEDIUMINT UNSIGNED" length="8" precision="0" nullable="false" jdbcType="4"/>
+      <foreign-key name="FK__dish" columns="DishID" ref-table="dish" ref-schema="" ref-catalog="redsun" ref-columns="DishID" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="FK__invoice" columns="InvoiceID" ref-table="invoice" ref-schema="" ref-catalog="redsun" ref-columns="invoiceID" update-rule="3" delete-rule="3" deferrability="2"/>
+    </table>
+    <table name="message" schema="" catalog="redsun" type="TABLE">
+      <column name="MessageID" sqlType="INT UNSIGNED" length="10" precision="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="ReplyTo" sqlType="INT UNSIGNED" length="10" precision="0" nullable="true" jdbcType="4"/>
+      <column name="Subject" sqlType="VARCHAR" length="30" precision="0" nullable="false" jdbcType="12" remarks="dGnDqnUgxJHhu4E="/>
+      <column name="Content" sqlType="TEXT" length="65535" precision="0" nullable="true" jdbcType="-1" remarks="buG7mWkgZHVuZyB0aW4gbmjhuq9u"/>
+      <column name="Status" sqlType="BIT" length="0" precision="0" nullable="true" jdbcType="-7" remarks="dGluIGPDsyDEkcaw4bujYyDEkeG7jWMgY2jGsGE="/>
+      <column name="Attachment" sqlType="BIT" length="0" precision="0" nullable="true" jdbcType="-7" remarks="bGluayDEkcOtbmgga8OobQ=="/>
+      <primary-key name="PRIMARY" columns="MessageID"/>
+      <foreign-key name="FK_message_message" columns="ReplyTo" ref-table="message" ref-schema="" ref-catalog="redsun" ref-columns="MessageID" update-rule="3" delete-rule="3" deferrability="2"/>
+      <exported-key name="FK_message_message" table="message" schema="" catalog="redsun" columns="ReplyTo"/>
+      <exported-key name="FK_message_receiver_message" table="message_receiver" schema="" catalog="redsun" columns="MessageID"/>
+      <exported-key name="FK_message_sender_message" table="message_sender" schema="" catalog="redsun" columns="MessageID"/>
+    </table>
+    <table name="message_receiver" schema="" catalog="redsun" type="TABLE">
+      <column name="MessageID" sqlType="INT UNSIGNED" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="EmployeeID" sqlType="MEDIUMINT UNSIGNED" length="8" precision="0" nullable="false" jdbcType="4"/>
+      <column name="Time" sqlType="TIMESTAMP" length="19" precision="0" nullable="false" jdbcType="93" def="Q1VSUkVOVF9USU1FU1RBTVA=" version="true"/>
+      <column name="Starred" sqlType="BIT" length="0" precision="0" nullable="true" jdbcType="-7"/>
+      <column name="IsTrash" sqlType="BIT" length="0" precision="0" nullable="true" jdbcType="-7"/>
+      <foreign-key name="FK_message_receiver_employee" columns="EmployeeID" ref-table="employee" ref-schema="" ref-catalog="redsun" ref-columns="EmployeeID" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="FK_message_receiver_message" columns="MessageID" ref-table="message" ref-schema="" ref-catalog="redsun" ref-columns="MessageID" update-rule="3" delete-rule="3" deferrability="2"/>
+    </table>
+    <table name="message_sender" schema="" catalog="redsun" type="TABLE">
+      <column name="MessageID" sqlType="INT UNSIGNED" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="EmployeeID" sqlType="MEDIUMINT UNSIGNED" length="8" precision="0" nullable="false" jdbcType="4"/>
+      <column name="Time" sqlType="TIMESTAMP" length="19" precision="0" nullable="false" jdbcType="93" def="Q1VSUkVOVF9USU1FU1RBTVA=" version="true"/>
+      <column name="Important" sqlType="BIT" length="0" precision="0" nullable="true" jdbcType="-7"/>
+      <column name="IsTrash" sqlType="BIT" length="0" precision="0" nullable="true" jdbcType="-7"/>
+      <foreign-key name="FK_message_sender_employee" columns="EmployeeID" ref-table="employee" ref-schema="" ref-catalog="redsun" ref-columns="EmployeeID" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="FK_message_sender_message" columns="MessageID" ref-table="message" ref-schema="" ref-catalog="redsun" ref-columns="MessageID" update-rule="3" delete-rule="3" deferrability="2"/>
+    </table>
+    <table name="order" schema="" catalog="redsun" type="TABLE">
+      <column name="OrderID" sqlType="BIGINT UNSIGNED" length="20" precision="0" nullable="false" jdbcType="-5" autoIncrement="true"/>
+      <column name="CustomerID" sqlType="INT UNSIGNED" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="DishID" sqlType="MEDIUMINT UNSIGNED" length="8" precision="0" nullable="false" jdbcType="4"/>
+      <column name="Quantity" sqlType="SMALLINT UNSIGNED" length="5" precision="0" nullable="false" jdbcType="5" def="MQ=="/>
+      <column name="Price" sqlType="MEDIUMINT UNSIGNED" length="8" precision="0" nullable="false" jdbcType="4"/>
+      <column name="Status" sqlType="BIT" length="0" precision="0" nullable="false" jdbcType="-7" def="MA==" remarks="MDrEkWFuZyBjaOG7nTsgMTogxJFhbmcgeOG7rSBsw707IDI6IMSRYW5nIGdpYW8gaMOgbmc7IDM6IMSRw6MgeG9uZw=="/>
+      <column name="ReceiveTime" sqlType="TIMESTAMP" length="19" precision="0" nullable="false" jdbcType="93" def="Q1VSUkVOVF9USU1FU1RBTVA=" remarks="dGjhu51pIGdpYW4gbmjhuq1uIMSRxqFuIGjDoG5n" version="true"/>
+      <column name="ProcessingTime" sqlType="TIMESTAMP" length="19" precision="0" nullable="false" jdbcType="93" def="Q1VSUkVOVF9USU1FU1RBTVA=" remarks="VGjhu51pIGdpYW4gYuG6r3QgxJHhuqd1IHjhu60gbMO9IMSRxqFuIGjDoG5n"/>
+      <column name="DeliveryTime" sqlType="TIMESTAMP" length="19" precision="0" nullable="false" jdbcType="93" def="Q1VSUkVOVF9USU1FU1RBTVA=" remarks="VGjhu51pIGdpYW4gZ2lhbyBow6BuZw=="/>
+      <column name="FinishTime" sqlType="TIMESTAMP" length="19" precision="0" nullable="false" jdbcType="93" def="Q1VSUkVOVF9USU1FU1RBTVA=" remarks="VGjhu51pIGdpYW4geOG7rSBsw70geG9uZyDEkcahbiBow6BuZw=="/>
+      <primary-key name="PRIMARY" columns="OrderID"/>
+      <foreign-key name="FK_order_customer" columns="CustomerID" ref-table="customer" ref-schema="" ref-catalog="redsun" ref-columns="CustomerID" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="FK_order_dish" columns="DishID" ref-table="dish" ref-schema="" ref-catalog="redsun" ref-columns="DishID" update-rule="3" delete-rule="3" deferrability="2"/>
+    </table>
+    <table name="resource" schema="" catalog="redsun" type="TABLE">
+      <column name="TaskID" sqlType="INT UNSIGNED" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="EmployeeID" sqlType="MEDIUMINT UNSIGNED" length="8" precision="0" nullable="false" jdbcType="4"/>
+      <column name="Status" sqlType="BIT" length="0" precision="0" nullable="true" jdbcType="-7" remarks="bnVsbDpsaXZlOyBvdGhlcnM6IGRlYWQ="/>
+      <column name="JoinDate" sqlType="TIMESTAMP" length="19" precision="0" nullable="false" jdbcType="93" def="Q1VSUkVOVF9USU1FU1RBTVA="/>
+      <foreign-key name="FK_resource_employee" columns="EmployeeID" ref-table="employee" ref-schema="" ref-catalog="redsun" ref-columns="EmployeeID" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="FK_resource_task" columns="TaskID" ref-table="task" ref-schema="" ref-catalog="redsun" ref-columns="TaskID" update-rule="3" delete-rule="3" deferrability="2"/>
+    </table>
+    <table name="supplier" schema="" catalog="redsun" type="TABLE">
+      <column name="SupplierID" sqlType="MEDIUMINT UNSIGNED" length="8" precision="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="Type" sqlType="VARCHAR" length="50" precision="0" nullable="false" jdbcType="12"/>
+      <column name="Name" sqlType="VARCHAR" length="20" precision="0" nullable="false" jdbcType="12"/>
+      <column name="Address" sqlType="VARCHAR" length="30" precision="0" nullable="true" jdbcType="12"/>
+      <column name="District" sqlType="VARCHAR" length="20" precision="0" nullable="true" jdbcType="12"/>
+      <column name="City" sqlType="VARCHAR" length="20" precision="0" nullable="true" jdbcType="12"/>
+      <column name="PhoneNumber" sqlType="VARCHAR" length="33" precision="0" nullable="true" jdbcType="12"/>
+      <column name="Contact" sqlType="VARCHAR" length="20" precision="0" nullable="true" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="SupplierID"/>
+      <exported-key name="FK_equipment_supplier" table="equipment" schema="" catalog="redsun" columns="SupplierID"/>
+      <exported-key name="FK_ingredent_detail_supplier" table="ingredent_detail" schema="" catalog="redsun" columns="SupplierID"/>
+    </table>
+    <table name="task" schema="" catalog="redsun" type="TABLE">
+      <column name="TaskID" sqlType="INT UNSIGNED" length="10" precision="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="UID" sqlType="VARCHAR" length="15" precision="0" nullable="false" jdbcType="12"/>
+      <column name="Name" sqlType="VARCHAR" length="30" precision="0" nullable="false" jdbcType="12"/>
+      <column name="HasChild" sqlType="BIT" length="0" precision="0" nullable="true" jdbcType="-7" remarks="bnVsbDoga2jDtG5nIGPDsw=="/>
+      <column name="UpperTask" sqlType="INT UNSIGNED" length="10" precision="0" nullable="true" jdbcType="4" remarks="VGFza0lEIGNoYQ=="/>
+      <column name="AccessLevel" sqlType="BIT" length="0" precision="0" nullable="false" jdbcType="-7" remarks="UXV54buBbiDEkcaw4bujYyB4ZW0="/>
+      <column name="AssignBy" sqlType="MEDIUMINT UNSIGNED" length="8" precision="0" nullable="false" jdbcType="4" remarks="bmfGsOG7nWkgdOG6oW8gdGFzaw=="/>
+      <column name="StartDate" sqlType="DATE" length="10" precision="0" nullable="true" jdbcType="91" remarks="bmfDoHkgYuG6r3QgxJHhuqd1IGThu7Ega2nhur9u"/>
+      <column name="Duration" sqlType="TINYINT UNSIGNED" length="3" precision="0" nullable="true" jdbcType="-6" remarks="c+G7kSBuZ8OgeSBk4buxIGtp4bq/bg=="/>
+      <column name="ActualStartDate" sqlType="DATE" length="10" precision="0" nullable="true" jdbcType="91" remarks="bmfDoHkgYuG6r3QgxJHhuqd1IHRo4buxYyB04bq/"/>
+      <column name="ActualDuration" sqlType="TINYINT UNSIGNED" length="3" precision="0" nullable="true" jdbcType="-6" remarks="c+G7kSBuZ8OgeSB0aOG7sWMgdOG6vw=="/>
+      <column name="Status" sqlType="TINYINT UNSIGNED" length="3" precision="0" nullable="true" jdbcType="-6" remarks="cGjhuqduIHRyxINtIGhvw6BuIHRow6BuaA=="/>
+      <primary-key name="PRIMARY" columns="TaskID"/>
+      <foreign-key name="FK_task_task" columns="UpperTask" ref-table="task" ref-schema="" ref-catalog="redsun" ref-columns="TaskID" update-rule="3" delete-rule="3" deferrability="2"/>
+      <exported-key name="FK_resource_task" table="resource" schema="" catalog="redsun" columns="TaskID"/>
+      <exported-key name="FK_task_task" table="task" schema="" catalog="redsun" columns="UpperTask"/>
+      <index name="AssignBy" unique="false" columns="AssignBy"/>
+    </table>
+    <procedure name="AddCustomer" schema="" catalog="redsun" type="0">
+      <prototype>
+        <parameter name="grade" sqlType="VARCHAR" length="15" precision="15" nullable="true" jdbcType="12" type="1" index="-1"/>
+        <parameter name="idNo" sqlType="VARCHAR" length="12" precision="12" nullable="true" jdbcType="12" type="1" index="-1"/>
+        <parameter name="lastName" sqlType="VARCHAR" length="10" precision="10" nullable="true" jdbcType="12" type="1" index="-1"/>
+        <parameter name="middleName" sqlType="VARCHAR" length="10" precision="10" nullable="true" jdbcType="12" type="1" index="-1"/>
+        <parameter name="firstName" sqlType="VARCHAR" length="10" precision="10" nullable="true" jdbcType="12" type="1" index="-1"/>
+        <parameter name="bday_Day" sqlType="TINYINT" length="3" precision="3" nullable="true" jdbcType="-6" type="1" index="-1"/>
+        <parameter name="bday_Month" sqlType="TINYINT" length="3" precision="3" nullable="true" jdbcType="-6" type="1" index="-1"/>
+        <parameter name="bday_Year" sqlType="MEDIUMINT" length="7" precision="7" nullable="true" jdbcType="4" type="1" index="-1"/>
+        <parameter name="joinDate" sqlType="DATETIME" length="19" precision="19" nullable="true" jdbcType="93" type="1" index="-1"/>
+        <parameter name="address" sqlType="VARCHAR" length="30" precision="30" nullable="true" jdbcType="12" type="1" index="-1"/>
+        <parameter name="district" sqlType="VARCHAR" length="20" precision="20" nullable="true" jdbcType="12" type="1" index="-1"/>
+        <parameter name="city" sqlType="VARCHAR" length="20" precision="20" nullable="true" jdbcType="12" type="1" index="-1"/>
+        <parameter name="phone" sqlType="VARCHAR" length="33" precision="33" nullable="true" jdbcType="12" type="1" index="-1"/>
+        <parameter name="email" sqlType="VARCHAR" length="30" precision="30" nullable="true" jdbcType="12" type="1" index="-1"/>
+      </prototype>
+    </procedure>
+    <procedure name="AddDepartment" schema="" catalog="redsun" type="0">
+      <prototype>
+        <parameter name="name" sqlType="VARCHAR" length="30" precision="30" nullable="true" jdbcType="12" type="1" index="-1"/>
+        <parameter name="isChildOf" sqlType="MEDIUMINT" length="7" precision="7" nullable="true" jdbcType="4" type="1" index="-1"/>
+        <parameter name="address" sqlType="VARCHAR" length="30" precision="30" nullable="true" jdbcType="12" type="1" index="-1"/>
+        <parameter name="district" sqlType="VARCHAR" length="20" precision="20" nullable="true" jdbcType="12" type="1" index="-1"/>
+        <parameter name="city" sqlType="VARCHAR" length="20" precision="20" nullable="true" jdbcType="12" type="1" index="-1"/>
+        <parameter name="phone" sqlType="VARCHAR" length="11" precision="11" nullable="true" jdbcType="12" type="1" index="-1"/>
+        <parameter name="founded" sqlType="TIMESTAMP" length="19" precision="19" nullable="true" jdbcType="93" type="1" index="-1"/>
+      </prototype>
+    </procedure>
+    <procedure name="AddEmployee" schema="" catalog="redsun" type="0">
+      <prototype>
+        <parameter name="username" sqlType="VARCHAR" length="20" precision="20" nullable="true" jdbcType="12" type="1" index="-1"/>
+        <parameter name="lastName" sqlType="VARCHAR" length="10" precision="10" nullable="true" jdbcType="12" type="1" index="-1"/>
+        <parameter name="middleName" sqlType="VARCHAR" length="10" precision="10" nullable="true" jdbcType="12" type="1" index="-1"/>
+        <parameter name="firstName" sqlType="VARCHAR" length="10" precision="10" nullable="true" jdbcType="12" type="1" index="-1"/>
+        <parameter name="workAt" sqlType="MEDIUMINT" length="7" precision="7" nullable="true" jdbcType="4" type="1" index="-1"/>
+        <parameter name="position" sqlType="VARCHAR" length="20" precision="20" nullable="true" jdbcType="12" type="1" index="-1"/>
+        <parameter name="status" sqlType="VARCHAR" length="20" precision="20" nullable="true" jdbcType="12" type="1" index="-1"/>
+        <parameter name="bDay" sqlType="TINYINT" length="3" precision="3" nullable="true" jdbcType="-6" type="1" index="-1"/>
+        <parameter name="bMonth" sqlType="TINYINT" length="3" precision="3" nullable="true" jdbcType="-6" type="1" index="-1"/>
+        <parameter name="bYear" sqlType="SMALLINT" length="5" precision="5" nullable="true" jdbcType="5" type="1" index="-1"/>
+        <parameter name="hireDate" sqlType="DATE" length="10" precision="10" nullable="true" jdbcType="91" type="1" index="-1"/>
+        <parameter name="address" sqlType="VARCHAR" length="30" precision="30" nullable="true" jdbcType="12" type="1" index="-1"/>
+        <parameter name="district" sqlType="VARCHAR" length="20" precision="20" nullable="true" jdbcType="12" type="1" index="-1"/>
+        <parameter name="city" sqlType="VARCHAR" length="20" precision="20" nullable="true" jdbcType="12" type="1" index="-1"/>
+        <parameter name="phone" sqlType="VARCHAR" length="33" precision="33" nullable="true" jdbcType="12" type="1" index="-1"/>
+        <parameter name="avatar" sqlType="VARCHAR" length="150" precision="150" nullable="true" jdbcType="12" type="1" index="-1"/>
+      </prototype>
+    </procedure>
+    <procedure name="AddTask" schema="" catalog="redsun" type="0">
+      <prototype>
+        <parameter name="name" sqlType="VARCHAR" length="30" precision="30" nullable="true" jdbcType="12" type="1" index="-1"/>
+        <parameter name="upperTask" sqlType="INT" length="10" precision="10" nullable="true" jdbcType="4" type="1" index="-1"/>
+        <parameter name="accessLevel" sqlType="BIT" length="0" precision="0" nullable="true" jdbcType="-7" type="1" index="-1"/>
+        <parameter name="assignBy" sqlType="MEDIUMINT" length="7" precision="7" nullable="true" jdbcType="4" type="1" index="-1"/>
+        <parameter name="startDate" sqlType="DATE" length="10" precision="10" nullable="true" jdbcType="91" type="1" index="-1"/>
+        <parameter name="duration" sqlType="TINYINT" length="3" precision="3" nullable="true" jdbcType="-6" type="1" index="-1"/>
+      </prototype>
+    </procedure>
+    <procedure name="SearchDeptByID" schema="" catalog="redsun" type="0">
+      <prototype>
+        <parameter name="id" sqlType="MEDIUMINT" length="7" precision="7" nullable="true" jdbcType="4" type="1" index="-1"/>
+      </prototype>
+    </procedure>
+    <procedure name="SearchEmpByDeptID" schema="" catalog="redsun" type="0">
+      <prototype>
+        <parameter name="department" sqlType="MEDIUMINT" length="7" precision="7" nullable="true" jdbcType="4" type="1" index="-1"/>
+      </prototype>
+    </procedure>
+    <procedure name="SearchEmpByID" schema="" catalog="redsun" type="0">
+      <prototype>
+        <parameter name="id" sqlType="MEDIUMINT" length="7" precision="7" nullable="true" jdbcType="4" type="1" index="-1"/>
+      </prototype>
+    </procedure>
+    <procedure name="SearchEmpDetailByID" schema="" catalog="redsun" type="0">
+      <prototype>
+        <parameter name="id" sqlType="MEDIUMINT" length="7" precision="7" nullable="true" jdbcType="4" type="1" index="-1"/>
+      </prototype>
+    </procedure>
+    <procedure name="SearchTaskByAssigner" schema="" catalog="redsun" type="0">
+      <prototype>
+        <parameter name="assignBy" sqlType="MEDIUMINT" length="7" precision="7" nullable="true" jdbcType="4" type="1" index="-1"/>
+      </prototype>
+    </procedure>
+    <procedure name="SetEmpPassword" schema="" catalog="redsun" type="0">
+      <prototype>
+        <parameter name="empID" sqlType="MEDIUMINT" length="7" precision="7" nullable="true" jdbcType="4" type="1" index="-1"/>
+        <parameter name="password" sqlType="VARCHAR" length="20" precision="20" nullable="true" jdbcType="12" type="1" index="-1"/>
+      </prototype>
+    </procedure>
+    <procedure name="UpdateTaskStatus" schema="" catalog="redsun" type="0">
+      <prototype>
+        <parameter name="status" sqlType="TINYINT" length="3" precision="3" nullable="true" jdbcType="-6" type="1" index="-1"/>
+      </prototype>
+    </procedure>
+    <procedure name="ViewCity" schema="" catalog="redsun" type="0"/>
+    <procedure name="ViewEmpPosition" schema="" catalog="redsun" type="0"/>
+    <procedure name="ViewEmpStatus" schema="" catalog="redsun" type="0"/>
+  </data-source>
+</component>
