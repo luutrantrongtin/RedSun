@@ -5,11 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="046e32ba-00e0-44f7-b9b4-e1984eb66938" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Module/View/Add.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Module/Controller/Dish.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Module/Controller/demo.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Module/Model/Dish_Class.php" />
       <change type="MOVED" beforePath="C:\AppServ\www\TheEnterprise\.idea\dictionaries\Skyboy.xml" afterPath="$PROJECT_DIR$/.idea/dictionaries/skyboy.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Module/addDish.php" afterPath="$PROJECT_DIR$/Module/addDish.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Module/Controller/Dish.php" afterPath="$PROJECT_DIR$/Module/Controller/Dish.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Module/include/header.php" afterPath="$PROJECT_DIR$/Module/include/header.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -59,9 +57,11 @@
     <file path="/ReplyMessage.php" changelist="046e32ba-00e0-44f7-b9b4-e1984eb66938" time="1380094916442" ignored="false" />
     <file path="/ViewDish.php" changelist="046e32ba-00e0-44f7-b9b4-e1984eb66938" time="1380507735355" ignored="false" />
     <file path="/updateDish.php" changelist="046e32ba-00e0-44f7-b9b4-e1984eb66938" time="1380512018016" ignored="false" />
-    <file path="/Dummy.txt" changelist="046e32ba-00e0-44f7-b9b4-e1984eb66938" time="1380515186318" ignored="false" />
-    <file path="/Dish.php" changelist="046e32ba-00e0-44f7-b9b4-e1984eb66938" time="1380523457620" ignored="false" />
+    <file path="/Dummy.txt" changelist="046e32ba-00e0-44f7-b9b4-e1984eb66938" time="1380523939015" ignored="false" />
+    <file path="/Dish.php" changelist="046e32ba-00e0-44f7-b9b4-e1984eb66938" time="1380528767810" ignored="false" />
     <file path="/Add.php" changelist="046e32ba-00e0-44f7-b9b4-e1984eb66938" time="1380518925847" ignored="false" />
+    <file path="/Dish_Class.php" changelist="046e32ba-00e0-44f7-b9b4-e1984eb66938" time="1380532949794" ignored="false" />
+    <file path="/DB.php" changelist="046e32ba-00e0-44f7-b9b4-e1984eb66938" time="1380532876917" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,19 +86,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="addDish.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Module/addDish.php">
+      <file leaf-file-name="Dish.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Module/Controller/Dish.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="0" selection-start="83" selection-end="83" vertical-scroll-proportion="7.096774">
+            <state line="9" column="34" selection-start="380" selection-end="380" vertical-scroll-proportion="0.3617021">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Dish.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Module/Controller/Dish.php">
+      <file leaf-file-name="Dish_Class.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Module/Model/Dish_Class.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="28" column="25" selection-start="1117" selection-end="1117" vertical-scroll-proportion="-12.935484">
+            <state line="4" column="84" selection-start="206" selection-end="206" vertical-scroll-proportion="-2.8387096">
               <folding />
             </state>
           </provider>
@@ -107,16 +107,7 @@
       <file leaf-file-name="Add.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Module/View/Add.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="43" column="8" selection-start="1269" selection-end="1269" vertical-scroll-proportion="-30.516129">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="header.php" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Module/include/header.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="52" selection-start="106" selection-end="106" vertical-scroll-proportion="0.15855856">
+            <state line="0" column="6" selection-start="6" selection-end="40" vertical-scroll-proportion="-0.0">
               <folding />
             </state>
           </provider>
@@ -140,8 +131,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/Module/RegisterCustomer.php" />
-        <option value="$PROJECT_DIR$/Module/RegisterEmployee.php" />
         <option value="$PROJECT_DIR$/Module/Send Message.php" />
         <option value="$PROJECT_DIR$/Module/login.php" />
         <option value="$PROJECT_DIR$/Module/ReceicerMessage.php" />
@@ -153,9 +142,11 @@
         <option value="$PROJECT_DIR$/Module/ViewDish.php" />
         <option value="$PROJECT_DIR$/Module/updateDish.php" />
         <option value="$PROJECT_DIR$/Module/addDish.php" />
-        <option value="$PROJECT_DIR$/Module/Controller/Dish.php" />
         <option value="$PROJECT_DIR$/Module/View/Add.php" />
+        <option value="$PROJECT_DIR$/Module/Controller/Dish.php" />
+        <option value="$PROJECT_DIR$/Module/Model/DB.php" />
         <option value="$PROJECT_DIR$/Module/include/header.php" />
+        <option value="$PROJECT_DIR$/Module/Model/Dish_Class.php" />
       </list>
     </option>
   </component>
@@ -305,6 +296,24 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="Model" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TheEnterprise" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TheEnterprise" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Module" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="include" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -417,18 +426,23 @@
       <created>1380513190936</created>
       <updated>1380513190936</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="bcb">
+      <created>1380523948046</created>
+      <updated>1380523948046</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32767403" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.20998532" sideWeight="0.670068" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22620791" sideWeight="0.9697842" order="0" side_tool="true" content_ui="combo" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.49914822" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.5008518" order="0" side_tool="true" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32767403" sideWeight="0.5" order="10" side_tool="true" content_ui="tabs" />
@@ -439,7 +453,6 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3289689" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -524,21 +537,6 @@
     </PATH>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Module/RegisterEmployee.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="149" column="56" selection-start="4345" selection-end="4345" vertical-scroll-proportion="0.21538462" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Module/css/index.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.7298748" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Module/DetailMessage.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="26" selection-start="258" selection-end="258" vertical-scroll-proportion="-3.1538463" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Module/SendMessage.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="51" column="29" selection-start="1633" selection-end="1845" vertical-scroll-proportion="-13.307693" />
@@ -558,7 +556,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Module/include/sidebar_left.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="44" selection-start="626" selection-end="626" vertical-scroll-proportion="0.41308412" />
+        <state line="13" column="44" selection-start="626" selection-end="626" vertical-scroll-proportion="0.41308412">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Module/viewSupplier.php">
@@ -603,23 +603,37 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Module/Controller/Dish.php">
+    <entry file="file://$PROJECT_DIR$/Module/include/database_connect.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="25" selection-start="1117" selection-end="1117" vertical-scroll-proportion="-12.935484">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Module/View/Add.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="43" column="8" selection-start="1269" selection-end="1269" vertical-scroll-proportion="-30.516129">
+        <state line="5" column="9" selection-start="125" selection-end="125" vertical-scroll-proportion="0.20754717">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Module/include/header.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="52" selection-start="106" selection-end="106" vertical-scroll-proportion="0.15855856">
+        <state line="7" column="30" selection-start="221" selection-end="221" vertical-scroll-proportion="-4.967742">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Module/Model/Dish_Class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="84" selection-start="206" selection-end="206" vertical-scroll-proportion="-2.8387096">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Module/View/Add.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="6" selection-start="6" selection-end="40" vertical-scroll-proportion="-0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Module/Controller/Dish.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="34" selection-start="380" selection-end="380" vertical-scroll-proportion="0.3617021">
           <folding />
         </state>
       </provider>

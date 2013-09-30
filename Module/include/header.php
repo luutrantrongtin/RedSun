@@ -5,7 +5,7 @@
 	<link rel="stylesheet" type="text/css" href="../css/index.css"/>
 	<meta http-equiv="content-type" content="text/html" charset="utf-8">
 
-	<?php include "database_connect.php"; ?>
+	<?php include "../include/database_connect.php"; ?>
 </head>
 <body>
 <div id="container">
