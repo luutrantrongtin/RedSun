@@ -2,7 +2,7 @@
 <?php include("../include/sidebar_left.php"); ?>
 
     <section>
-        <form action="../Controller/Dish.php" method="post">
+        <form action="../Controller/Add_Dish.php" method="post">
             Tên món ăn:
             <br>
             <input type="text" name="dishName" width="500" maxlength="50" value="<?php
